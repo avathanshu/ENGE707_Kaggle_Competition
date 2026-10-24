@@ -218,3 +218,19 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- ENGE707 project ---
+# raw Kaggle data (1.2 GB, 93k files) and heavy outputs are never pushed
+train/
+test/
+outputs/
+*.pt
+*.pth
+*.npy
+*.npz
+.DS_Store
+
+# Kaggle competition data (download from Kaggle)
+train_labels.csv
+sample_submission.csv
+*.pdf
