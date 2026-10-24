@@ -1,0 +1,6 @@
+file,created,runs,val_clean,val_shift,lb_public,lb_private,notes
+convnext_tiny_shift_fold0.csv,2026-10-07 23:42,convnext_tiny_shift,0.9838,0.9885,0.9598,,"fold 0 only, no TTA (made during the 05 run)"
+convnext_tiny_shift_cv5.csv,2026-10-08 08:23,convnext_tiny_shift,0.9833,0.9877,,,"mean of folds 0,1,2,3,4, no TTA (val = OOF)"
+convnext_tiny_shift_cv5_corrected.csv,2026-10-08 08:34,convnext_tiny_shift,0.9982,0.9968,0.9769,,cv5 + HistGradientBoosting corrector on probs + log w/h/aspect (src/stacking.py)
+convnext_tiny_sim_cv5.csv,2026-10-09 22:13,convnext_tiny_sim,0.9972,0.9957,0.9778,,"mean of folds 0,1,2,3,4, no TTA (val = OOF)"
+abl_sim_fold0.csv,2026-10-09 23:33,abl_sim,0.9961,0.994,,,"EfficientNet-B0 128px sim aug, fold 0, no TTA (resolution A/B)"

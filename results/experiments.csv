@@ -1,0 +1,12 @@
+run,fold,finished_at,model,img_size,aug,resize_mode,crop_scale_min,lowres_p,label_smoothing,epochs_run,best_epoch,train_acc,val_clean_acc,val_shift_acc,val_clean_loss,val_shift_loss,minutes,n_train,n_val,notes
+convnext_tiny_shift,0,2026-10-07 23:19,convnext_tiny.fb_in22k_ft_in1k,128,shift,squash,0.6,0.3,0.1,10,7,0.9839,0.9838,0.9885,0.1222,0.1112,136.6,50914,12732,
+convnext_tiny_shift,1,2026-10-08 01:26,convnext_tiny.fb_in22k_ft_in1k,128,shift,squash,0.6,0.3,0.1,9,5,0.9761,0.9832,0.9883,0.1292,0.1187,121.5,50915,12732,
+convnext_tiny_shift,2,2026-10-08 03:44,convnext_tiny.fb_in22k_ft_in1k,128,shift,squash,0.6,0.3,0.1,10,7,0.9832,0.9819,0.9866,0.1274,0.1173,133.2,50917,12732,
+convnext_tiny_shift,3,2026-10-08 06:02,convnext_tiny.fb_in22k_ft_in1k,128,shift,squash,0.6,0.3,0.1,10,7,0.9834,0.9833,0.987,0.1256,0.1163,133.2,50916,12732,
+convnext_tiny_shift,4,2026-10-08 08:21,convnext_tiny.fb_in22k_ft_in1k,128,shift,squash,0.6,0.3,0.1,10,6,0.9794,0.9841,0.9879,0.1257,0.118,133.1,50918,12732,
+convnext_tiny_sim,0,2026-10-09 12:46,convnext_tiny.fb_in22k_ft_in1k,128,sim,squash,0.6,0.3,0.1,10,9,0.9962,0.9977,0.996,0.0881,0.0922,135.1,50914,12732,
+convnext_tiny_sim,1,2026-10-09 15:11,convnext_tiny.fb_in22k_ft_in1k,128,sim,squash,0.6,0.3,0.1,10,9,0.9959,0.998,0.9965,0.0888,0.0932,138.7,50915,12732,
+convnext_tiny_sim,2,2026-10-09 17:30,convnext_tiny.fb_in22k_ft_in1k,128,sim,squash,0.6,0.3,0.1,10,8,0.9953,0.9965,0.9955,0.0922,0.0948,133.4,50917,12732,
+convnext_tiny_sim,3,2026-10-09 19:49,convnext_tiny.fb_in22k_ft_in1k,128,sim,squash,0.6,0.3,0.1,10,7,0.9937,0.9967,0.9956,0.0929,0.0956,134.3,50916,12732,
+convnext_tiny_sim,4,2026-10-09 22:11,convnext_tiny.fb_in22k_ft_in1k,128,sim,squash,0.6,0.3,0.1,10,9,0.9961,0.9969,0.9947,0.0911,0.0963,135.1,50918,12732,
+abl_sim,0,2026-10-09 23:00,efficientnet_b0.ra_in1k,128,sim,squash,0.6,0.3,0.1,6,6,0.9931,0.9961,0.994,0.1894,0.195,34.0,50914,12732,
