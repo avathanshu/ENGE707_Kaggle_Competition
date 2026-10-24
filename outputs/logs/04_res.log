@@ -1,0 +1,110 @@
+Input Notebook:  04_transfer_learning.ipynb
+Output Notebook: outputs/logs/04_res.ipynb
+Unable to parse line 3 'FORCE = False              # True = retrain from scratch even if finished'.
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+Executing notebook with kernel: enge707
+Executing Cell 1---------------------------------------
+Ending Cell 1------------------------------------------
+Executing Cell 2---------------------------------------
+Ending Cell 2------------------------------------------
+Executing Cell 3---------------------------------------
+Ending Cell 3------------------------------------------
+Executing Cell 4---------------------------------------
+device: mps
+
+Ending Cell 4------------------------------------------
+Executing Cell 5---------------------------------------
+Ending Cell 5------------------------------------------
+Executing Cell 6---------------------------------------
+Ending Cell 6------------------------------------------
+Executing Cell 7---------------------------------------
+                                                         model_name img_size    aug resize_mode crop_scale_min lowres_p label_smoothing epochs batch_size      lr head_lr  selected
+cnn_noaug                                                simple_cnn       96   none      squash            0.6      0.3             0.0     20        128   0.002   0.002     False
+cnn_shift                                                simple_cnn       96  shift      squash            0.6      0.3             0.1     20        128   0.002   0.002     False
+convnext_tiny_plain                  convnext_tiny.fb_in22k_ft_in1k      128  plain      squash            0.6      0.3             0.1     10         64  0.0002   0.001     False
+convnext_tiny_shift                  convnext_tiny.fb_in22k_ft_in1k      128  shift      squash            0.6      0.3             0.1     10         64  0.0002   0.001     False
+convnext_tiny_sim                    convnext_tiny.fb_in22k_ft_in1k      128    sim      squash            0.6      0.3             0.1     10         64  0.0002   0.001     False
+abl_base                                    efficientnet_b0.ra_in1k      128  shift      squash            0.6      0.3             0.1      6        128  0.0003   0.001     False
+abl_plain                                   efficientnet_b0.ra_in1k      128  plain      squash            0.6      0.3             0.1      6        128  0.0003   0.001     False
+abl_sim                                     efficientnet_b0.ra_in1k      128    sim      squash            0.6      0.3             0.1      6        128  0.0003   0.001      True
+abl_sim_224                                 efficientnet_b0.ra_in1k      224    sim      squash            0.6      0.3             0.1      6        128  0.0003   0.001      True
+abl_letterbox                               efficientnet_b0.ra_in1k      128  shift   letterbox            0.6      0.3             0.1      6        128  0.0003   0.001     False
+abl_scale04                                 efficientnet_b0.ra_in1k      128  shift      squash            0.4      0.3             0.1      6        128  0.0003   0.001     False
+abl_scale08                                 efficientnet_b0.ra_in1k      128  shift      squash            0.8      0.3             0.1      6        128  0.0003   0.001     False
+abl_nolowres                                efficientnet_b0.ra_in1k      128  shift      squash            0.6      0.0             0.1      6        128  0.0003   0.001     False
+abl_nosmooth                                efficientnet_b0.ra_in1k      128  shift      squash            0.6      0.3             0.0      6        128  0.0003   0.001     False
+abl_96                                      efficientnet_b0.ra_in1k       96  shift      squash            0.6      0.3             0.1      6        128  0.0003   0.001     False
+abl_160                                     efficientnet_b0.ra_in1k      160  shift      squash            0.6      0.3             0.1      6        128  0.0003   0.001     False
+vit_small_shift          vit_small_patch16_224.augreg_in21k_ft_in1k      128  shift      squash            0.6      0.3             0.1     10         64  0.0001  0.0005     False
+effnet_b0_shift                             efficientnet_b0.ra_in1k      128  shift      squash            0.6      0.3             0.1     12        128  0.0003   0.001     False
+convnext_tiny_shift_224              convnext_tiny.fb_in22k_ft_in1k      224  shift      squash            0.6      0.3             0.1     12         96  0.0002   0.001     False
+vit_small_shift_224      vit_small_patch16_224.augreg_in21k_ft_in1k      224  shift      squash            0.6      0.3             0.1     12         96  0.0001  0.0005     False
+smoke_test                                  efficientnet_b0.ra_in1k       64  shift      squash            0.6      0.3             0.1      1        128  0.0003   0.001     False
+smoke_cnn                                                simple_cnn       64  shift      squash            0.6      0.3             0.1      2        128   0.002   0.002     False
+Ending Cell 7------------------------------------------
+Executing Cell 8---------------------------------------
+Ending Cell 8------------------------------------------
+Executing Cell 9---------------------------------------
+           run                    model  params (M) pretrained on                     hf_hub_id original input size                   mean                    std paper
+0      abl_sim  efficientnet_b0.ra_in1k         4.0       ra_in1k  timm/efficientnet_b0.ra_in1k       (3, 224, 224)  (0.485, 0.456, 0.406)  (0.229, 0.224, 0.225)      
+1  abl_sim_224  efficientnet_b0.ra_in1k         4.0       ra_in1k  timm/efficientnet_b0.ra_in1k       (3, 224, 224)  (0.485, 0.456, 0.406)  (0.229, 0.224, 0.225)      
+Ending Cell 9------------------------------------------
+Executing Cell 10--------------------------------------
+Ending Cell 10-----------------------------------------
+Executing Cell 11--------------------------------------
+[abl_sim fold 0] device=mps  train=50914  val=12732  steps/epoch=397
+
+train:   0%|          | 0/397 [00:10<?, ?it/s]
+val_clean:   0%|          | 0/50 [00:10<?, ?it/s]
+val_shift:   0%|          | 0/50 [00:10<?, ?it/s]
+epoch  1/6  train 0.8951/0.8435  clean 1.8800/0.6311  shift 1.8698/0.6664  365s
+  ETA for the remaining 5 epochs: 30 min
+
+train:   0%|          | 0/397 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/50 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/50 [00:00<?, ?it/s]
+epoch  2/6  train 0.5243/0.9782  clean 1.2114/0.9136  shift 1.1933/0.9276  335s
+
+train:   0%|          | 0/397 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/50 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/50 [00:00<?, ?it/s]
+epoch  3/6  train 0.5048/0.9854  clean 0.6031/0.9880  shift 0.6053/0.9848  337s
+
+train:   0%|          | 0/397 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/50 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/50 [00:00<?, ?it/s]
+epoch  4/6  train 0.4934/0.9898  clean 0.3554/0.9945  shift 0.3627/0.9913  329s
+
+train:   0%|          | 0/397 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/50 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/50 [00:00<?, ?it/s]
+epoch  5/6  train 0.4892/0.9917  clean 0.2467/0.9959  shift 0.2532/0.9935  330s
+
+train:   0%|          | 0/397 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/50 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/50 [00:00<?, ?it/s]
+epoch  6/6  train 0.4852/0.9931  clean 0.1894/0.9961  shift 0.1950/0.9940  346s
+
+val_clean:   0%|          | 0/50 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/50 [00:00<?, ?it/s]
+test:   0%|          | 0/116 [00:11<?, ?it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+[abl_sim_224 fold 0] device=mps  train=50914  val=12732  steps/epoch=397
+
+train:   0%|          | 0/397 [00:11<?, ?it/s]
+/Users/avathanshubhat/Documents/AUT/Y3S2/ENGE707 - Data Engineering & AI/Kaggle Contest/ENGE707_Kaggle_Competition/src/engine.py:70: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+
+val_clean:   0%|          | 0/50 [00:11<?, ?it/s]
+val_shift:   0%|          | 0/50 [00:12<?, ?it/s]
+epoch  1/6  train 2.0801/0.2180  clean 2.0794/0.2181  shift 2.0794/0.2181  811s
+  ETA for the remaining 5 epochs: 68 min
+
+train:   0%|          | 0/397 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/50 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/50 [00:00<?, ?it/s]
+epoch  2/6  train nan/0.2180  clean nan/0.2181  shift nan/0.2181  828s
+
+train:   0%|          | 0/397 [00:00<?, ?it/s]
+[IPKernelApp] WARNING | Parent appears to have exited, shutting down.

@@ -1,0 +1,351 @@
+Input Notebook:  05_cv_ensemble_training.ipynb
+Output Notebook: outputs/logs/05_run.ipynb
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+Executing notebook with kernel: enge707
+Executing Cell 1---------------------------------------
+Ending Cell 1------------------------------------------
+Executing Cell 2---------------------------------------
+Ending Cell 2------------------------------------------
+Executing Cell 3---------------------------------------
+Ending Cell 3------------------------------------------
+Executing Cell 4---------------------------------------
+device: mps
+
+TrainConfig(run_name='convnext_tiny_shift', model_name='convnext_tiny.fb_in22k_ft_in1k', pretrained=True, img_size=128, resize_mode='squash', aug='shift', crop_scale_min=0.6, crop_ratio=(0.6, 1.67), lowres_p=0.3, epochs=10, batch_size=64, lr=0.0002, head_lr=0.001, weight_decay=0.05, warmup_epochs=1, label_smoothing=0.1, ema_decay=0.999, drop_rate=0.0, drop_path_rate=0.1, cnn_width=32, patience=4, amp=True, drop_degenerate=True, num_workers=6, seed=42, train_limit=0, notes='')
+Ending Cell 4------------------------------------------
+Executing Cell 5---------------------------------------
+Ending Cell 5------------------------------------------
+Executing Cell 6---------------------------------------
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+model.safetensors: reconstructing file:   0%|          |  0.00B /  114MB            
+model.safetensors: downloading bytes:           |  0.00B            
+[convnext_tiny_shift fold 0] device=mps  train=50914  val=12732  steps/epoch=795
+
+train:   0%|          | 0/795 [00:09<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:10<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:10<?, ?it/s]
+epoch  1/10  train 0.7872/0.8605  clean 0.7744/0.8645  shift 0.7380/0.8977  835s
+  ETA for the remaining 9 epochs: 125 min
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  2/10  train 0.5640/0.9565  clean 0.2438/0.9661  shift 0.2272/0.9763  809s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  3/10  train 0.5396/0.9677  clean 0.1657/0.9763  shift 0.1522/0.9831  822s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  4/10  train 0.5301/0.9722  clean 0.1384/0.9809  shift 0.1266/0.9864  822s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  5/10  train 0.5192/0.9766  clean 0.1289/0.9826  shift 0.1177/0.9871  826s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  6/10  train 0.5099/0.9813  clean 0.1249/0.9826  shift 0.1136/0.9874  824s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  7/10  train 0.5028/0.9839  clean 0.1222/0.9838  shift 0.1112/0.9885  821s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  8/10  train 0.4959/0.9870  clean 0.1230/0.9832  shift 0.1114/0.9881  809s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  9/10  train 0.4933/0.9881  clean 0.1251/0.9829  shift 0.1123/0.9883  812s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch 10/10  train 0.4901/0.9894  clean 0.1264/0.9828  shift 0.1131/0.9882  815s
+
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+test:   0%|          | 0/231 [00:11<?, ?it/s]
+[convnext_tiny_shift fold 1] device=mps  train=50915  val=12732  steps/epoch=795
+
+train:   0%|          | 0/795 [00:10<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:10<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:10<?, ?it/s]
+epoch  1/10  train 0.7867/0.8608  clean 0.7715/0.8670  shift 0.7329/0.9061  856s
+  ETA for the remaining 9 epochs: 128 min
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  2/10  train 0.5679/0.9559  clean 0.2438/0.9650  shift 0.2259/0.9766  821s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  3/10  train 0.5394/0.9685  clean 0.1596/0.9787  shift 0.1481/0.9848  810s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  4/10  train 0.5323/0.9708  clean 0.1362/0.9826  shift 0.1264/0.9874  804s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  5/10  train 0.5198/0.9761  clean 0.1292/0.9832  shift 0.1187/0.9883  805s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  6/10  train 0.5102/0.9803  clean 0.1254/0.9833  shift 0.1149/0.9879  798s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  7/10  train 0.5038/0.9834  clean 0.1248/0.9838  shift 0.1140/0.9882  799s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  8/10  train 0.4972/0.9867  clean 0.1266/0.9826  shift 0.1145/0.9876  797s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  9/10  train 0.4943/0.9876  clean 0.1284/0.9813  shift 0.1153/0.9869  796s
+
+early stopping: no val_shift improvement for 4 epochs
+
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+test:   0%|          | 0/231 [00:09<?, ?it/s]
+[convnext_tiny_shift fold 2] device=mps  train=50917  val=12732  steps/epoch=795
+
+train:   0%|          | 0/795 [00:09<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:09<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:09<?, ?it/s]
+epoch  1/10  train 0.7905/0.8573  clean 0.7712/0.8718  shift 0.7336/0.9087  825s
+  ETA for the remaining 9 epochs: 124 min
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  2/10  train 0.5659/0.9566  clean 0.2423/0.9674  shift 0.2258/0.9760  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  3/10  train 0.5411/0.9674  clean 0.1656/0.9789  shift 0.1548/0.9833  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  4/10  train 0.5286/0.9729  clean 0.1411/0.9813  shift 0.1319/0.9846  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  5/10  train 0.5206/0.9762  clean 0.1326/0.9815  shift 0.1235/0.9852  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  6/10  train 0.5092/0.9807  clean 0.1295/0.9823  shift 0.1198/0.9860  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  7/10  train 0.5034/0.9832  clean 0.1274/0.9819  shift 0.1173/0.9866  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  8/10  train 0.4978/0.9858  clean 0.1265/0.9822  shift 0.1160/0.9863  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  9/10  train 0.4926/0.9882  clean 0.1272/0.9821  shift 0.1159/0.9864  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch 10/10  train 0.4914/0.9888  clean 0.1281/0.9817  shift 0.1165/0.9863  796s
+
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+test:   0%|          | 0/231 [00:09<?, ?it/s]
+[convnext_tiny_shift fold 3] device=mps  train=50916  val=12732  steps/epoch=795
+
+train:   0%|          | 0/795 [00:09<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:09<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:09<?, ?it/s]
+epoch  1/10  train 0.7870/0.8598  clean 0.7685/0.8560  shift 0.7305/0.8957  825s
+  ETA for the remaining 9 epochs: 124 min
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  2/10  train 0.5646/0.9571  clean 0.2412/0.9665  shift 0.2228/0.9771  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  3/10  train 0.5407/0.9670  clean 0.1631/0.9785  shift 0.1519/0.9836  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  4/10  train 0.5292/0.9725  clean 0.1371/0.9828  shift 0.1283/0.9856  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  5/10  train 0.5192/0.9763  clean 0.1299/0.9831  shift 0.1206/0.9870  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  6/10  train 0.5105/0.9807  clean 0.1276/0.9828  shift 0.1181/0.9863  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  7/10  train 0.5041/0.9834  clean 0.1256/0.9833  shift 0.1163/0.9870  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  8/10  train 0.4970/0.9861  clean 0.1257/0.9826  shift 0.1159/0.9870  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  9/10  train 0.4927/0.9883  clean 0.1271/0.9828  shift 0.1166/0.9868  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch 10/10  train 0.4902/0.9897  clean 0.1309/0.9816  shift 0.1189/0.9862  796s
+
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+test:   0%|          | 0/231 [00:09<?, ?it/s]
+[convnext_tiny_shift fold 4] device=mps  train=50918  val=12732  steps/epoch=795
+
+train:   0%|          | 0/795 [00:09<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:09<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:09<?, ?it/s]
+epoch  1/10  train 0.7866/0.8604  clean 0.7726/0.8709  shift 0.7361/0.9059  825s
+  ETA for the remaining 9 epochs: 124 min
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  2/10  train 0.5658/0.9565  clean 0.2586/0.9583  shift 0.2380/0.9715  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  3/10  train 0.5419/0.9671  clean 0.1691/0.9753  shift 0.1565/0.9825  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  4/10  train 0.5304/0.9714  clean 0.1397/0.9812  shift 0.1308/0.9861  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  5/10  train 0.5194/0.9763  clean 0.1312/0.9822  shift 0.1228/0.9864  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  6/10  train 0.5122/0.9794  clean 0.1257/0.9841  shift 0.1180/0.9879  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  7/10  train 0.5023/0.9838  clean 0.1262/0.9826  shift 0.1173/0.9863  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  8/10  train 0.4973/0.9858  clean 0.1277/0.9819  shift 0.1176/0.9859  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch  9/10  train 0.4920/0.9884  clean 0.1276/0.9829  shift 0.1176/0.9865  796s
+
+train:   0%|          | 0/795 [00:00<?, ?it/s]
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+epoch 10/10  train 0.4911/0.9889  clean 0.1305/0.9823  shift 0.1194/0.9861  796s
+
+val_clean:   0%|          | 0/100 [00:00<?, ?it/s]
+val_shift:   0%|          | 0/100 [00:00<?, ?it/s]
+test:   0%|          | 0/231 [00:10<?, ?it/s]
+Ending Cell 6------------------------------------------
+Executing Cell 7---------------------------------------
+Ending Cell 7------------------------------------------
+Executing Cell 8---------------------------------------
+   fold  best_epoch  epochs_run  train_acc  val_clean_acc  val_shift_acc  val_clean_loss  val_shift_loss  minutes
+0     0           7          10     0.9839         0.9838         0.9885          0.1222          0.1112    136.6
+1     1           5           9     0.9761         0.9832         0.9883          0.1292          0.1187    121.5
+2     2           7          10     0.9832         0.9819         0.9866          0.1274          0.1173    133.2
+3     3           7          10     0.9834         0.9833         0.9870          0.1256          0.1163    133.2
+4     4           6          10     0.9794         0.9841         0.9879          0.1257          0.1180    133.1
+      val_clean_acc  val_shift_acc
+mean         0.9833         0.9877
+std          0.0008         0.0008
+min          0.9819         0.9866
+max          0.9841         0.9885
+Ending Cell 8------------------------------------------
+Executing Cell 9---------------------------------------
+<Figure size 1700x400 with 3 Axes>
+Ending Cell 9------------------------------------------
+Executing Cell 10--------------------------------------
+Ending Cell 10-----------------------------------------
+Executing Cell 11--------------------------------------
+Ending Cell 11-----------------------------------------
+Executing Cell 12--------------------------------------
+           val_clean   val_shift
+images    63660.0000  63660.0000
+accuracy      0.9833      0.9877
+log loss      0.1260      0.1163
+          val_clean  val_shift
+CatEye       0.9955     0.9956
+CatFace      0.9999     0.9996
+CatMouth     0.9922     0.9869
+CatNose      0.8849     0.9313
+DogEye       0.9987     0.9986
+DogFace      0.9998     1.0000
+DogMouth     0.9938     0.9931
+DogNose      0.9832     0.9831
+<Figure size 1500x600 with 2 Axes>
+Ending Cell 12-----------------------------------------
+Executing Cell 13--------------------------------------
+Ending Cell 13-----------------------------------------
+Executing Cell 14--------------------------------------
+Ending Cell 14-----------------------------------------
+Executing Cell 15--------------------------------------
+mean agreement of single fold models with the fold average on test: 0.9895
+wrote /Users/avathanshubhat/Documents/AUT/Y3S2/ENGE707 - Data Engineering & AI/Kaggle Contest/ENGE707_Kaggle_Competition/submissions/convnext_tiny_shift_cv5.csv  (29443 rows, validated)
+{'CatEye': 0.213, 'DogEye': 0.19, 'CatMouth': 0.127, 'CatFace': 0.106, 'DogMouth': 0.1, 'DogFace': 0.096, 'DogNose': 0.086, 'CatNose': 0.081}
+
+                            file           created                 runs  val_clean  val_shift  lb_public  lb_private                                         notes
+0  convnext_tiny_shift_fold0.csv  2026-10-07 23:42  convnext_tiny_shift     0.9838     0.9885     0.9598         NaN  fold 0 only, no TTA (made during the 05 run)
+1    convnext_tiny_shift_cv5.csv  2026-10-08 08:23  convnext_tiny_shift     0.9833     0.9877        NaN         NaN   mean of folds 0,1,2,3,4, no TTA (val = OOF)
+Ending Cell 15-----------------------------------------

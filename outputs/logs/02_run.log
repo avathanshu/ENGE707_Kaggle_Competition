@@ -1,0 +1,199 @@
+Input Notebook:  02_preprocessing_and_splits.ipynb
+Output Notebook: 02_preprocessing_and_splits.ipynb
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+Executing notebook with kernel: enge707
+Executing Cell 1---------------------------------------
+Ending Cell 1------------------------------------------
+Executing Cell 2---------------------------------------
+Ending Cell 2------------------------------------------
+Executing Cell 3---------------------------------------
+/Users/avathanshubhat/Documents/AUT/Y3S2/ENGE707 - Data Engineering & AI/Kaggle Contest/ENGE707_Kaggle_Competition/.venv/lib/python3.14/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+
+(63660, 25) (29443, 25)
+
+Ending Cell 3------------------------------------------
+Executing Cell 4---------------------------------------
+Ending Cell 4------------------------------------------
+Executing Cell 5---------------------------------------
+degenerate training images: 15 of 63660
+
+          count   share
+class                  
+CatEye        4  0.0003
+CatFace       1  0.0001
+CatMouth      5  0.0007
+CatNose       5  0.0007
+DogEye        0  0.0000
+DogFace       0  0.0000
+DogMouth      0  0.0000
+DogNose       0  0.0000
+<Figure size 1680x330 with 24 Axes>
+Ending Cell 5------------------------------------------
+Executing Cell 6---------------------------------------
+Ending Cell 6------------------------------------------
+Executing Cell 7---------------------------------------
+Ending Cell 7------------------------------------------
+Executing Cell 8---------------------------------------
+63660 images -> 63617 groups; groups with >1 image: 43 (covering 86 images); largest group: 2
+data/folds.csv already exists - loaded, NOT regenerated
+
+Ending Cell 8------------------------------------------
+Executing Cell 9---------------------------------------
+                                value
+every image has a fold           True
+no group is split across folds   True
+fold          0      1      2      3      4    All
+class                                             
+CatEye     2777   2776   2777   2777   2777  13884
+CatFace    1388   1389   1389   1388   1388   6942
+CatMouth   1389   1388   1388   1389   1388   6942
+CatNose    1388   1389   1388   1388   1389   6942
+DogEye     2316   2316   2316   2316   2316  11580
+DogFace    1158   1158   1158   1158   1158   5790
+DogMouth   1158   1158   1158   1158   1158   5790
+DogNose    1158   1158   1158   1158   1158   5790
+All       12732  12732  12732  12732  12732  63660
+class  CatEye  CatFace  CatMouth  CatNose  DogEye  DogFace  DogMouth  DogNose
+fold                                                                         
+0       21.81    10.90     10.91    10.90   18.19      9.1       9.1      9.1
+1       21.80    10.91     10.90    10.91   18.19      9.1       9.1      9.1
+2       21.81    10.91     10.90    10.90   18.19      9.1       9.1      9.1
+3       21.81    10.90     10.91    10.90   18.19      9.1       9.1      9.1
+4       21.81    10.90     10.90    10.91   18.19      9.1       9.1      9.1
+Ending Cell 9------------------------------------------
+Executing Cell 10--------------------------------------
+Ending Cell 10-----------------------------------------
+Executing Cell 11--------------------------------------
+Ending Cell 11-----------------------------------------
+Executing Cell 12--------------------------------------
+wrote /Users/avathanshubhat/Documents/AUT/Y3S2/ENGE707 - Data Engineering & AI/Kaggle Contest/ENGE707_Kaggle_Competition/data/shiftsim_params.json
+
+   p_keep  scale_min  aspect_max  p_round  shrink_min  distance
+0   0.335      0.650       1.140    0.257       0.556    34.488
+1   0.376      0.661       1.079    0.088       0.967    34.682
+2   0.491      0.789       1.391    0.221       0.851    36.071
+3   0.346      0.598       1.087    0.072       0.711    37.227
+4   0.366      0.529       1.084    0.132       0.541    37.598
+5   0.264      0.636       1.079    0.114       0.779    38.008
+6   0.283      0.685       1.072    0.094       0.495    38.248
+7   0.468      0.626       1.371    0.028       0.623    38.548
+8   0.467      0.478       1.165    0.097       0.498    38.634
+9   0.493      0.690       1.274    0.270       0.553    38.643
+{
+  "p_keep": 0.33451409181662206,
+  "scale_min": 0.6501336211569311,
+  "aspect_max": 1.1395419643173241,
+  "p_round": 0.2572582670805896,
+  "shrink_min": 0.5564747148783732,
+  "seed": 42
+}
+
+Ending Cell 12-----------------------------------------
+Executing Cell 13--------------------------------------
+Ending Cell 13-----------------------------------------
+Executing Cell 14--------------------------------------
+                         train  default ShiftSim(train)  calibrated ShiftSim(train)    test
+square %                 65.52                    37.84                       32.49   32.85
+odd dimension %          18.91                    35.18                       41.93   55.01
+both multiples of 10 %   13.81                    20.02                       22.57   21.24
+aspect < 0.80 %           4.46                     7.06                        4.87    7.34
+aspect 0.80-0.995 %       5.87                    17.36                       22.33   18.41
+aspect 0.995-1.03 %      67.93                    40.10                       36.12   38.26
+aspect 1.03-1.30 %        1.52                    17.62                       19.11   16.97
+aspect 1.30-1.50 %       19.95                    14.21                       14.95   14.93
+aspect > 1.50 %           0.27                     3.65                        2.61    4.09
+short side p5            30.00                    24.00                       24.00   28.00
+short side p50           78.00                    70.00                       70.00   77.00
+short side p95          268.05                   247.00                      244.00  267.00
+                            distance to test
+train                                 147.35
+default ShiftSim(train)                37.19
+calibrated ShiftSim(train)             33.34
+test                                    0.00
+Ending Cell 14-----------------------------------------
+Executing Cell 15--------------------------------------
+<Figure size 1800x420 with 3 Axes>
+Ending Cell 15-----------------------------------------
+Executing Cell 16--------------------------------------
+Ending Cell 16-----------------------------------------
+Executing Cell 17--------------------------------------
+Ending Cell 17-----------------------------------------
+Executing Cell 18--------------------------------------
+<Figure size 1680x495 with 36 Axes>
+<Figure size 1680x495 with 36 Axes>
+Ending Cell 18-----------------------------------------
+Executing Cell 19--------------------------------------
+<Figure size 1680x330 with 24 Axes>
+Ending Cell 19-----------------------------------------
+Executing Cell 20--------------------------------------
+Ending Cell 20-----------------------------------------
+Executing Cell 21--------------------------------------
+Ending Cell 21-----------------------------------------
+Executing Cell 22--------------------------------------
+comparison          original train vs test  ShiftSim(train) vs test
+AUC (all features)                   0.894                    0.781
+AUC w                                0.501                    0.544
+AUC h                                0.503                    0.542
+AUC aspect                           0.507                    0.506
+AUC log_short                        0.513                    0.539
+AUC odd_w                            0.641                    0.559
+AUC odd_h                            0.619                    0.549
+AUC round                            0.537                    0.506
+AUC square                           0.664                    0.501
+Ending Cell 22-----------------------------------------
+Executing Cell 23--------------------------------------
+Ending Cell 23-----------------------------------------
+Executing Cell 24--------------------------------------
+<Figure size 1680x330 with 24 Axes>
+Ending Cell 24-----------------------------------------
+Executing Cell 25--------------------------------------
+Ending Cell 25-----------------------------------------
+Executing Cell 26--------------------------------------
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+embed:   0%|          | 0/12 [00:00<?, ?it/s]
+                                             
+
+embed:   0%|          | 0/12 [00:00<?, ?it/s]
+                                             
+
+embed:   0%|          | 0/12 [00:00<?, ?it/s]
+                                             
+
+                         embedding AUC
+original train vs test           0.523
+ShiftSim(train) vs test          0.538
+Ending Cell 26-----------------------------------------
+Executing Cell 27--------------------------------------
+Ending Cell 27-----------------------------------------
+Executing Cell 28--------------------------------------
+Ending Cell 28-----------------------------------------
+Executing Cell 29--------------------------------------
+<Figure size 1200x1400 with 64 Axes>
+<Figure size 1200x1400 with 64 Axes>
+<Figure size 1200x1400 with 64 Axes>
+Ending Cell 29-----------------------------------------
+Executing Cell 30--------------------------------------
+Ending Cell 30-----------------------------------------
+Executing Cell 31--------------------------------------
+Ending Cell 31-----------------------------------------
+Executing Cell 32--------------------------------------
+   num_workers  images/s
+0            0       731
+1            4      3490
+2            6      4971
+3            8      8315
+Ending Cell 32-----------------------------------------
+Executing Cell 33--------------------------------------
+                preset                                       model  img_size  train img/s  eval img/s  min / epoch  epochs  hours / fold  hours / 5 folds
+0            cnn_shift                                  simple_cnn        96          653        1942          1.5      20          0.51              2.5
+1             abl_base                     efficientnet_b0.ra_in1k       128          166         531          5.9       6          0.59              3.0
+2  convnext_tiny_shift              convnext_tiny.fb_in22k_ft_in1k       128           69         354         13.5      10          2.24             11.2
+3      vit_small_shift  vit_small_patch16_224.augreg_in21k_ft_in1k       128          173         606          5.6      10          0.94              4.7
+4      effnet_b0_shift                     efficientnet_b0.ra_in1k       128          175         548          5.6      12          1.13              5.6
+device: mps
+
+Ending Cell 33-----------------------------------------
+Executing Cell 34--------------------------------------
+Ending Cell 34-----------------------------------------
